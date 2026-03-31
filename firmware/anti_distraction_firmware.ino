@@ -152,9 +152,9 @@ void setup() {
   lcd.backlight();
   
   lcd.setCursor(0, 0);
-  lcd.print("   M-U-S-I-C v2   ");
+  lcd.print("   LET'S STUDY   ");
   lcd.setCursor(0, 1);
-  lcd.print("  STAY FOCUSED!  ");
+  lcd.print("  be limitless  ");
 
   pinMode(BUZZER_PIN, OUTPUT);
 }
