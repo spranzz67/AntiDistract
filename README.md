@@ -1,4 +1,4 @@
-# Cyberpunk Anti-Distraction System
+# Anti-Distraction System
 
 A functional web-based dashboard that monitors user focus via a webcam and provides physical alerts using an ESP32.
 
