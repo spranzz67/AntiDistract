@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPRANZZLEARNS Cyberpunk Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="grid-overlay"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo-area">
+                <i class="fa-solid fa-expand icon-target"></i>
+                <div class="titles">
+                    <h1>SPRANZZLEARNS</h1>
+                    <p class="subtitle">A ONE STOP SOLUTION TO GET RID OF YOUR DISTRACTIONS</p>
+                </div>
+            </div>
+            <div class="header-controls">
+                <i class="fa-solid fa-gear"></i>
+                <i class="fa-solid fa-expand"></i>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="dashboard">
+            <!-- Left Panel -->
+            <div class="left-panel">
+                <!-- Status Box -->
+                <div class="box status-box">
+                    <div class="box-header">
+                        <span>SYSTEM STATUS</span>
+                        <i class="fa-solid fa-wave-square"></i>
+                    </div>
+                    <div class="status-display" id="system-status">
+                        STANDBY
+                    </div>
+                    <button class="btn-initialize" id="init-btn">
+                        <i class="fa-solid fa-play"></i> <span id="btn-text">INITIALIZE</span>
+                    </button>
+                </div>
+
+                <div class="metrics-row">
+                    <!-- Session Focus Timer -->
+                    <div class="box metric-box timer-box">
+                        <div class="box-header">
+                            <i class="fa-regular fa-clock"></i>
+                            <span>SESSION FOCUS</span>
+                        </div>
+                        <div class="metric-value neon-cyan" id="session-timer">
+                            00:00
+                        </div>
+                    </div>
+
+                    <!-- Deviations Counter -->
+                    <div class="box metric-box deviations-box">
+                        <div class="box-header">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <span>DEVIATIONS</span>
+                        </div>
+                        <div class="metric-value neon-red" id="deviations-count">
+                            0
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel (Camera Feed) -->
+            <div class="right-panel">
+                <div class="box feed-box">
+                    <div class="feed-header">
+                        CAM_FEED_01 <span id="feed-status">[OFF]</span>
+                    </div>
+                    
+                    <div class="feed-content" id="feed-content">
+                        <!-- Offline State -->
+                        <div class="offline-state" id="offline-state">
+                            <i class="fa-solid fa-camera-slash"></i>
+                            <p>SYSTEM OFFLINE</p>
+                        </div>
+                        <!-- Live Stream (hidden initially) -->
+                        <img src="" id="video-stream" class="hidden">
+                        <div class="rec-indicator hidden" id="rec-indicator">
+                            <span class="dot"></span> REC
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Socket.IO -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.1/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
